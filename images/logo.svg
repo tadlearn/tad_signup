@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="92"
+   height="52"
+   viewBox="0 0 24.341666 13.758334"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="6.625"
+     inkscape:cx="12.377358"
+     inkscape:cy="38.867925"
+     inkscape:window-width="1920"
+     inkscape:window-height="897"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="圖層 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ff6600;fill-rule:evenodd;stroke-width:0.264583;fill-opacity:1"
+       id="rect435"
+       width="24.381603"
+       height="13.79827"
+       x="0"
+       y="0"
+       ry="0.45927674"
+       rx="0.33946541" />
+    <g
+       id="g297"
+       transform="matrix(0.02441479,0,0,0.02441479,1.4576721,0.61899891)">
+      <path
+         style="fill:#f3f3f3"
+         d="M 385.067,512 H 107.733 L 0,404.267 V 32 C 0,13.867 13.867,0 32,0 h 353.067 c 18.133,0 32,13.867 32,32 v 448 c 0,18.133 -13.867,32 -32,32 z"
+         id="path196" />
+      <polygon
+         style="fill:#adb3ba"
+         points="0,404.267 107.733,404.267 107.733,512 "
+         id="polygon198" />
+      <rect
+         x="64"
+         y="42.667"
+         style="fill:#415a6b"
+         width="97.067001"
+         height="120.533"
+         id="rect200" />
+      <g
+         id="g212">
+	<rect
+   x="210.133"
+   y="62.932999"
+   style="fill:#ced6e0"
+   width="151.467"
+   height="27.733"
+   id="rect202" />
+
+	<rect
+   x="210.133"
+   y="134.39999"
+   style="fill:#ced6e0"
+   width="151.467"
+   height="27.733"
+   id="rect204" />
+
+	<rect
+   x="64"
+   y="206.933"
+   style="fill:#ced6e0"
+   width="296.53299"
+   height="27.733"
+   id="rect206" />
+
+	<rect
+   x="64"
+   y="278.39999"
+   style="fill:#ced6e0"
+   width="296.53299"
+   height="27.733"
+   id="rect208" />
+
+	<rect
+   x="64"
+   y="349.867"
+   style="fill:#ced6e0"
+   width="103.467"
+   height="27.733"
+   id="rect210" />
+
+</g>
+      <path
+         style="fill:#f3705a"
+         d="m 253.867,457.6 c -4.267,0 -8.533,-1.067 -11.733,-4.267 l -44.8,-44.8 c -6.4,-6.4 -6.4,-16 0,-22.4 6.4,-6.4 16,-6.4 22.4,0 L 252.8,419.2 334.933,337.067 c 6.4,-6.4 16,-6.4 22.4,0 6.4,6.4 6.4,16 0,22.4 l -93.867,93.867 c -1.066,3.199 -5.333,4.266 -9.599,4.266 z"
+         id="path214" />
+      <polygon
+         style="fill:#ffd15c"
+         points="237.867,273.067 307.2,257.067 309.333,250.667 260.267,201.6 253.867,203.733 "
+         id="polygon216" />
+      <path
+         style="fill:#4ec0aa"
+         d="m 272,220.8 c -3.2,-8.533 -8.533,-14.933 -18.133,-18.133 L 418.133,40.533 436.266,58.666 Z"
+         id="path218" />
+      <path
+         style="fill:#66c6b9"
+         d="M 290.133,238.933 C 286.933,230.4 281.6,224 272,220.8 L 436.267,57.6 454.4,75.733 Z"
+         id="path220" />
+      <path
+         style="fill:#4ec0aa"
+         d="m 307.2,257.067 c -3.2,-8.533 -8.533,-14.933 -18.133,-18.133 L 454.4,75.733 472.533,93.866 Z"
+         id="path222" />
+      <path
+         style="fill:#415a6b"
+         d="M 471.467,93.867 508.8,56.533 c 4.267,-4.267 4.267,-10.667 0,-13.867 L 470.4,3.2 c -4.267,-4.267 -10.667,-4.267 -13.867,0 L 419.2,40.533 Z"
+         id="path224" />
+      <rect
+         x="443.25699"
+         y="24.683001"
+         transform="matrix(-0.709,0.7053,-0.7053,-0.709,813.47,-210.6002)"
+         style="fill:#e8eae9"
+         width="13.868"
+         height="75.737999"
+         id="rect226" />
+      <path
+         style="fill:#415a6b"
+         d="m 261.333,267.733 -23.467,5.333 5.334,-23.466 c 8.533,2.133 16,8.533 18.133,18.133 z"
+         id="path228" />
+      <g
+         id="g230">
+</g>
+      <g
+         id="g232">
+</g>
+      <g
+         id="g234">
+</g>
+      <g
+         id="g236">
+</g>
+      <g
+         id="g238">
+</g>
+      <g
+         id="g240">
+</g>
+      <g
+         id="g242">
+</g>
+      <g
+         id="g244">
+</g>
+      <g
+         id="g246">
+</g>
+      <g
+         id="g248">
+</g>
+      <g
+         id="g250">
+</g>
+      <g
+         id="g252">
+</g>
+      <g
+         id="g254">
+</g>
+      <g
+         id="g256">
+</g>
+      <g
+         id="g258">
+</g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:bold;font-size:4.95411px;line-height:1.25;font-family:'Microsoft YaHei';fill:#ffffff;fill-opacity:1;stroke:#a0111c;stroke-width:0.324;-inkscape-font-specification:'Microsoft YaHei, Bold';font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke fill markers"
+       x="13.38975"
+       y="5.6131558"
+       id="text2562"><tspan
+         sodipodi:role="line"
+         id="tspan2560"
+         style="stroke-width:0.324;-inkscape-font-specification:'Microsoft YaHei, Bold';font-family:'Microsoft YaHei';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-size:4.95411005px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#a0111c;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke fill markers"
+         x="13.38975"
+         y="5.6131558">活動</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.324;-inkscape-font-specification:'Microsoft YaHei, Bold';font-family:'Microsoft YaHei';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-size:4.95411005px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#a0111c;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke fill markers"
+         x="13.38975"
+         y="12.315107"
+         id="tspan2564">報名</tspan></text>
+  </g>
+</svg>
