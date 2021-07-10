@@ -6,6 +6,7 @@ namespace XoopsModules\Tad_signup;
 
 use XoopsModules\Tadtools\FormValidator;
 use XoopsModules\Tadtools\My97DatePicker;
+use XoopsModules\Tadtools\SweetAlert;
 use XoopsModules\Tadtools\Utility;
 
 class Tad_signup_actions
@@ -128,6 +129,9 @@ class Tad_signup_actions
             }
             $xoopsTpl->assign($col_name, $col_val);
         }
+
+        $SweetAlert = new SweetAlert();
+        $SweetAlert->render("del_action", "index.php?op=tad_signup_actions_destroy&id=", 'id');
     }
 
     //更新某一筆資料
