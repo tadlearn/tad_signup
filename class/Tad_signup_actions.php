@@ -213,6 +213,10 @@ class Tad_signup_actions
             // $data['HTML文字欄'] = $myts->displayTarea($data['HTML文字欄'], 1, 0, 0, 0, 0);
             // $data['數字欄'] = (int) $data['數字欄'];
 
+            $data['title'] = $myts->htmlSpecialChars($data['title']);
+            $data['detail'] = $myts->displayTarea($data['detail'], 0, 1, 0, 1, 1);
+            $data['setup'] = $myts->displayTarea($data['setup'], 0, 1, 0, 1, 1);
+
             if ($_SESSION['api_mode'] or $auto_key) {
                 $data_arr[] = $data;
             } else {
