@@ -169,6 +169,9 @@ class Tad_signup_actions
     public static function destroy($id = '')
     {
         global $xoopsDB;
+        if (!$_SESSION['tad_signup_adm']) {
+            redirect_header($_SERVER['PHP_SELF'], 3, "您沒有權限使用此功能");
+        }
 
         if (empty($id)) {
             return;

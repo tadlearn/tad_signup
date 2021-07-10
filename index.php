@@ -45,7 +45,8 @@ switch ($op) {
     //刪除資料
     case 'tad_signup_actions_destroy':
         Tad_signup_actions::destroy($id);
-        header("location: {$_SERVER['PHP_SELF']}");
+        // header("location: {$_SERVER['PHP_SELF']}");
+        redirect_header($_SERVER['PHP_SELF'], 3, "成功刪除活動！");
         exit;
 
     default:
