@@ -72,6 +72,9 @@ class Tad_signup_actions
         foreach ($_POST as $var_name => $var_val) {
             $$var_name = $myts->addSlashes($var_val);
         }
+        $uid = (int) $uid;
+        $number = (int) $number;
+        $enable = (int) $enable;
 
         $sql = "insert into `" . $xoopsDB->prefix("tad_signup_actions") . "` (
         `title`,
