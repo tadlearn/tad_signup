@@ -32,6 +32,7 @@ class Tad_signup_actions
         }
 
         $op = empty($id) ? "tad_signup_actions_store" : "tad_signup_actions_update";
+        $xoopsTpl->assign('next_op', $op);
 
         //套用formValidator驗證機制
         $formValidator = new FormValidator("#myForm", true);
@@ -42,7 +43,6 @@ class Tad_signup_actions
         $token = new \XoopsFormHiddenToken();
         $token_form = $token->render();
         $xoopsTpl->assign("token_form", $token_form);
-        $xoopsTpl->assign('next_op', $op);
     }
 
     //新增資料
