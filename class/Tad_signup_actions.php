@@ -24,7 +24,7 @@ class Tad_signup_actions
     {
         global $xoopsTpl, $xoopsUser;
         if (!$_SESSION['tad_signup_adm']) {
-            redirect_header($_SERVER['PHP_SELF'], 3, "非管理員，無法執行此動作");
+            redirect_header($_SERVER['PHP_SELF'], 3, "您沒有權限使用此功能");
         }
 
         //抓取預設值
@@ -60,6 +60,9 @@ class Tad_signup_actions
     public static function store()
     {
         global $xoopsDB;
+        if (!$_SESSION['tad_signup_adm']) {
+            redirect_header($_SERVER['PHP_SELF'], 3, "您沒有權限使用此功能");
+        }
 
         //XOOPS表單安全檢查
         Utility::xoops_security_check();
@@ -71,15 +74,25 @@ class Tad_signup_actions
         }
 
         $sql = "insert into `" . $xoopsDB->prefix("tad_signup_actions") . "` (
-        `欄位1`,
-        `欄位2`,
-        `欄位3`
+        `title`,
+        `detail`,
+        `action_date`,
+        `end_date`,
+        `number`,
+        `setup`,
+        `uid`,
+        `enable`
         ) values(
-        '{$欄位1值}',
-        '{$欄位2值}',
-        '{$欄位3值}'
+        '{$title}',
+        '{$detail}',
+        '{$action_date}',
+        '{$end_date}',
+        '{$number}',
+        '{$setup}',
+        '{$uid}',
+        '{$enable}'
         )";
-        $xoopsDB->query($sql) or Utility::web_error($sql, __FILE__, __LINE__);
+        $xoopsDB->queryF($sql) or Utility::web_error($sql, __FILE__, __LINE__);
 
         //取得最後新增資料的流水編號
         $id = $xoopsDB->getInsertId();
