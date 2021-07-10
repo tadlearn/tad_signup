@@ -134,6 +134,9 @@ class Tad_signup_actions
     public static function update($id = '')
     {
         global $xoopsDB;
+        if (!$_SESSION['tad_signup_adm']) {
+            redirect_header($_SERVER['PHP_SELF'], 3, "您沒有權限使用此功能");
+        }
 
         //XOOPS表單安全檢查
         Utility::xoops_security_check();
@@ -143,11 +146,19 @@ class Tad_signup_actions
         foreach ($_POST as $var_name => $var_val) {
             $$var_name = $myts->addSlashes($var_val);
         }
+        $uid = (int) $uid;
+        $number = (int) $number;
+        $enable = (int) $enable;
 
         $sql = "update `" . $xoopsDB->prefix("tad_signup_actions") . "` set
-        `欄位1` = '{$欄位1值}',
-        `欄位2` = '{$欄位2值}',
-        `欄位3` = '{$欄位3值}'
+        `title` = '{$title}',
+        `detail` = '{$detail}',
+        `action_date` = '{$action_date}',
+        `end_date` = '{$end_date}',
+        `number` = '{$number}',
+        `setup` = '{$setup}',
+        `uid` = '{$uid}',
+        `enable` = '{$enable}'
         where `id` = '$id'";
         $xoopsDB->queryF($sql) or Utility::web_error($sql, __FILE__, __LINE__);
 
