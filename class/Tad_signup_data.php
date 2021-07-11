@@ -5,6 +5,7 @@
 namespace XoopsModules\Tad_signup;
 
 use XoopsModules\Tadtools\FormValidator;
+use XoopsModules\Tadtools\SweetAlert;
 use XoopsModules\Tadtools\TadDataCenter;
 use XoopsModules\Tadtools\Utility;
 use XoopsModules\Tad_signup\Tad_signup_actions;
@@ -146,6 +147,9 @@ class Tad_signup_data
 
         $now_uid = $xoopsUser ? $xoopsUser->uid() : 0;
         $xoopsTpl->assign("now_uid", $now_uid);
+
+        $SweetAlert = new SweetAlert();
+        $SweetAlert->render("del_data", "index.php?op=tad_signup_data_destroy&action_id={$action_id}&id=", 'id');
     }
 
     //更新某一筆資料
