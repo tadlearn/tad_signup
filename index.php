@@ -1,6 +1,4 @@
 <?php
-// 如「模組目錄」= signup，則「首字大寫模組目錄」= Signup
-// 如「資料表名」= actions，則「模組物件」= Actions
 use Xmf\Request;
 use XoopsModules\Tadtools\Utility;
 use XoopsModules\Tad_signup\Tad_signup_actions;

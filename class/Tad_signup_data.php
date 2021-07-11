@@ -4,6 +4,7 @@
 
 namespace XoopsModules\Tad_signup;
 
+use XoopsModules\Tadtools\BootstrapTable;
 use XoopsModules\Tadtools\FormValidator;
 use XoopsModules\Tadtools\SweetAlert;
 use XoopsModules\Tadtools\TadDataCenter;
@@ -224,12 +225,20 @@ class Tad_signup_data
     }
 
     //取得所有資料陣列
-    public static function get_all($action_id, $auto_key = false)
+    public static function get_all($action_id = '', $uid = '', $auto_key = false)
     {
-        global $xoopsDB;
+        global $xoopsDB, $xoopsUser;
         $myts = \MyTextSanitizer::getInstance();
 
-        $sql = "select * from `" . $xoopsDB->prefix("Tad_signup_data") . "` where `action_id`='$action_id' order by `signup_date`";
+        if ($action_id) {
+            $sql = "select * from `" . $xoopsDB->prefix("Tad_signup_data") . "` where `action_id`='$action_id' order by `signup_date`";
+        } else {
+            if (!$_SESSION['tad_signup_adm'] or !$uid) {
+                $uid = $xoopsUser ? $xoopsUser->uid() : 0;
+            }
+            $sql = "select * from `" . $xoopsDB->prefix("Tad_signup_data") . "` where `uid`='$uid' order by `signup_date`";
+        }
+
         $result = $xoopsDB->query($sql) or Utility::web_error($sql, __FILE__, __LINE__);
         $data_arr = [];
         $TadDataCenter = new TadDataCenter('tad_signup');
@@ -244,6 +253,16 @@ class Tad_signup_data
             }
         }
         return $data_arr;
+    }
+
+    // 查詢某人的報名紀錄
+    public static function my($uid)
+    {
+        global $xoopsTpl, $xoopsUser;
+
+        $my_signup = self::get_all(null, $uid);
+        $xoopsTpl->assign('my_signup', $$my_signup);
+        BootstrapTable::render();
     }
 
 }

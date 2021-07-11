@@ -135,7 +135,7 @@ class Tad_signup_actions
         $SweetAlert = new SweetAlert();
         $SweetAlert->render("del_action", "index.php?op=tad_signup_actions_destroy&id=", 'id');
 
-        $signup = Tad_signup_data::get_all($id, true);
+        $signup = Tad_signup_data::get_all($id, null, true);
         $xoopsTpl->assign('signup', $signup);
 
         BootstrapTable::render();
