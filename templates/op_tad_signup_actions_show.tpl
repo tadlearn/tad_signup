@@ -20,6 +20,31 @@
     </small>
 </h3>
 
+<table class="table">
+    <thead>
+        <tr>
+            <{foreach from=$signup.0.tdc key=col_name item=user name=tdc}>
+                <th><{$col_name}></th>
+            <{/foreach}>
+            <th>報名日期</th>
+        </tr>
+    </thead>
+    <tbody>
+        <{foreach from=$signup item=signup_data}>
+            <tr>
+                <{foreach from=$signup_data.tdc item=user_data}>
+                    <td>
+                        <{foreach from=$user_data item=data}>
+                            <div><{$data}></div>
+                        <{/foreach}>
+                    </td>
+                <{/foreach}>
+                <td><{$signup_data.signup_date}></td>
+            </tr>
+        <{/foreach}>
+    </tbody>
+</table>
+
 
 <{if $smarty.session.tad_signup_adm}>
     <div class="bar">
