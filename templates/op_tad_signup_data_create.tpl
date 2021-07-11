@@ -20,7 +20,7 @@
     </small>
 </h3>
 
-<form action="index.php.php" method="post" id="myForm" enctype="multipart/form-data" class="form-horizontal">
+<form action="index.php" method="post" id="myForm" enctype="multipart/form-data" class="form-horizontal">
 
     <div class="alert alert-success">
         <{$signup_form}>

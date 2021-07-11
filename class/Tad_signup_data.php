@@ -33,7 +33,7 @@ class Tad_signup_data
             $xoopsTpl->assign($col_name, $col_val);
         }
 
-        $op = empty($id) ? "Tad_signup_data_store" : "Tad_signup_data_update";
+        $op = empty($id) ? "tad_signup_data_store" : "tad_signup_data_update";
         $xoopsTpl->assign('next_op', $op);
 
         //套用formValidator驗證機制
@@ -84,20 +84,27 @@ class Tad_signup_data
         foreach ($_POST as $var_name => $var_val) {
             $$var_name = $myts->addSlashes($var_val);
         }
+        $action_id = (int) $action_id;
+        $uid = (int) $uid;
 
         $sql = "insert into `" . $xoopsDB->prefix("Tad_signup_data") . "` (
-        `欄位1`,
-        `欄位2`,
-        `欄位3`
+        `action_id`,
+        `uid`,
+        `signup_date`
         ) values(
-        '{$欄位1值}',
-        '{$欄位2值}',
-        '{$欄位3值}'
+        '{$action_id}',
+        '{$uid}',
+        now()
         )";
-        $xoopsDB->query($sql) or Utility::web_error($sql, __FILE__, __LINE__);
+        $xoopsDB->queryF($sql) or Utility::web_error($sql, __FILE__, __LINE__);
 
         //取得最後新增資料的流水編號
         $id = $xoopsDB->getInsertId();
+
+        $TadDataCenter = new TadDataCenter('tad_signup');
+        $TadDataCenter->set_col('id', $id);
+        $TadDataCenter->saveData();
+
         return $id;
     }
 
