@@ -5,6 +5,7 @@
 namespace XoopsModules\Tad_signup;
 
 use XoopsModules\Tadtools\FormValidator;
+use XoopsModules\Tadtools\TadDataCenter;
 use XoopsModules\Tadtools\Utility;
 use XoopsModules\Tad_signup\Tad_signup_actions;
 
@@ -64,6 +65,10 @@ class Tad_signup_data
 
         $uid = $xoopsUser ? $xoopsUser->uid() : 0;
         $xoopsTpl->assign("uid", $uid);
+
+        $TadDataCenter = new TadDataCenter('tad_signup');
+        $signup_form = $TadDataCenter->strToForm($action['setup']);
+        $xoopsTpl->assign("signup_form", $signup_form);
     }
 
     //新增資料
