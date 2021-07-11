@@ -53,7 +53,7 @@ switch ($op) {
 
     //新增報名表單
     case 'tad_signup_data_create':
-        Tad_signup_data::create();
+        Tad_signup_data::create($action_id);
         break;
 
     default:
