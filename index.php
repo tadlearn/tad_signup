@@ -68,6 +68,12 @@ switch ($op) {
         Tad_signup_data::show($id);
         break;
 
+    //修改報名表單
+    case 'tad_signup_data_edit':
+        Tad_signup_data::create($action_id, $id);
+        $op = 'tad_signup_data_create';
+        break;
+
     default:
         if (empty($id)) {
             Tad_signup_actions::index();

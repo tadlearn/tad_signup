@@ -67,6 +67,7 @@ class Tad_signup_data
         $xoopsTpl->assign("uid", $uid);
 
         $TadDataCenter = new TadDataCenter('tad_signup');
+        $TadDataCenter->set_col('id', $id);
         $signup_form = $TadDataCenter->strToForm($action['setup']);
         $xoopsTpl->assign("signup_form", $signup_form);
     }
