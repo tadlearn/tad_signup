@@ -36,7 +36,7 @@ $modversion['system_menu'] = 1;
 
 //---模組資料表架構---//
 $modversion['sqlfile']['mysql'] = 'sql/mysql.sql';
-$modversion['tables'] = ['tad_signup_actions'];
+$modversion['tables'] = ['tad_signup_actions', 'tad_signup_data'];
 
 //---後台管理介面設定---//
 $modversion['hasAdmin'] = 1;

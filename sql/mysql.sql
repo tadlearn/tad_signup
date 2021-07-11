@@ -10,3 +10,14 @@ CREATE TABLE `tad_signup_actions` (
   `enable` enum('1','0') NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE `tad_signup_data` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `action_id` smallint(5) unsigned NOT NULL,
+  `uid` mediumint(8) unsigned NOT NULL,
+  `signup_date` datetime NOT NULL,
+  `accept` enum('1','0') DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
