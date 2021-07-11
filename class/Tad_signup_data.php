@@ -123,13 +123,26 @@ class Tad_signup_data
         $myts = \MyTextSanitizer::getInstance();
         foreach ($data as $col_name => $col_val) {
             $col_val = $myts->htmlSpecialChars($col_val);
-
-            //過濾讀出的變數值 displayTarea($text, $html=0, $smiley=1, $xcode=1, $image=1, $br=1);
-            // $data['大量文字欄'] = $myts->displayTarea($data['大量文字欄'], 0, 1, 0, 1, 1);
-            // $data['HTML文字欄'] = $myts->displayTarea($data['HTML文字欄'], 1, 0, 0, 0, 0);
-
             $xoopsTpl->assign($col_name, $col_val);
+            $$col_name = $col_val;
         }
+
+        $TadDataCenter = new TadDataCenter('tad_signup');
+        $TadDataCenter->set_col('id', $id);
+        $tdc = $TadDataCenter->getData();
+        $xoopsTpl->assign('tdc', $tdc);
+
+        $action = Tad_signup_actions::get($action_id);
+        foreach ($action as $col_name => $col_val) {
+            if ($col_name == 'detail') {
+                $col_val = $myts->displayTarea($col_val, 0, 1, 0, 1, 1);
+            } else {
+                $col_val = $myts->htmlSpecialChars($col_val);
+            }
+            $action[$col_name] = $col_val;
+        }
+        $xoopsTpl->assign("action", $action);
+
     }
 
     //更新某一筆資料

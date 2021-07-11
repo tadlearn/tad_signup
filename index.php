@@ -63,6 +63,11 @@ switch ($op) {
         redirect_header("{$_SERVER['PHP_SELF']}?op=tad_signup_data_show&id=$id", 3, "成功報名活動！");
         break;
 
+    //顯示報名表
+    case 'tad_signup_data_show':
+        Tad_signup_data::show($id);
+        break;
+
     default:
         if (empty($id)) {
             Tad_signup_actions::index();
