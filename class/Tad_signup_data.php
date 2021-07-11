@@ -245,6 +245,7 @@ class Tad_signup_data
         while ($data = $xoopsDB->fetchArray($result)) {
             $TadDataCenter->set_col('id', $data['id']);
             $data['tdc'] = $TadDataCenter->getData();
+            $data['action'] = Tad_signup_actions::get($data['action_id']);
 
             if ($_SESSION['api_mode'] or $auto_key) {
                 $data_arr[] = $data;
@@ -261,7 +262,7 @@ class Tad_signup_data
         global $xoopsTpl, $xoopsUser;
 
         $my_signup = self::get_all(null, $uid);
-        $xoopsTpl->assign('my_signup', $$my_signup);
+        $xoopsTpl->assign('my_signup', $my_signup);
         BootstrapTable::render();
     }
 
