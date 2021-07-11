@@ -4,6 +4,7 @@
 
 namespace XoopsModules\Tad_signup;
 
+use XoopsModules\Tadtools\BootstrapTable;
 use XoopsModules\Tadtools\FormValidator;
 use XoopsModules\Tadtools\My97DatePicker;
 use XoopsModules\Tadtools\SweetAlert;
@@ -136,6 +137,8 @@ class Tad_signup_actions
 
         $signup = Tad_signup_data::get_all($id, true);
         $xoopsTpl->assign('signup', $signup);
+
+        BootstrapTable::render();
     }
 
     //更新某一筆資料

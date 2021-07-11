@@ -20,13 +20,13 @@
     </small>
 </h3>
 
-<table class="table">
+<table class="table" data-toggle="table" data-pagination="true" data-search="true" data-mobile-responsive="true">
     <thead>
         <tr>
             <{foreach from=$signup.0.tdc key=col_name item=user name=tdc}>
-                <th><{$col_name}></th>
+                <th data-sortable="true"><{$col_name}></th>
             <{/foreach}>
-            <th>報名日期</th>
+            <th data-sortable="true">報名日期</th>
         </tr>
     </thead>
     <tbody>
