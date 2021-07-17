@@ -39,6 +39,6 @@
 
 <{if $smarty.session.tad_signup_adm}>
     <div class="bar">
-        <a href="index.php?op=tad_signup_actions_edit&id=<{$action.id}>" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> 編輯活動</a>
+        <a href="<{$xoops_url}>/modules/tad_signup/index.php?op=tad_signup_actions_edit&id=<{$action.id}>" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> 編輯活動</a>
     </div>
 <{/if}>
