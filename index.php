@@ -82,7 +82,7 @@ switch ($op) {
 
     //刪除報名資料
     case 'tad_signup_data_destroy':
-        $uid = $_SESSION['tad_signup_adm'] ? null : $xoopsUser->uid();
+        $uid = $_SESSION['can_add'] ? null : $xoopsUser->uid();
         $signup = Tad_signup_data::get($id, $uid);
         Tad_signup_data::destroy($id);
         Tad_signup_data::mail($id, 'destroy', $signup);

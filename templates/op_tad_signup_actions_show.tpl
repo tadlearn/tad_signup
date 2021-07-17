@@ -26,7 +26,7 @@
             <{foreach from=$signup.0.tdc key=col_name item=user name=tdc}>
                 <th data-sortable="true"><{$col_name}></th>
             <{/foreach}>
-            <{if $smarty.session.tad_signup_adm}>
+            <{if $smarty.session.can_add}>
                 <th data-sortable="true">錄取</th>
             <{/if}>
             <th data-sortable="true">報名日期</th>
@@ -38,7 +38,7 @@
                 <{foreach from=$signup_data.tdc key=col_name item=user_data}>
                     <td>
                         <{foreach from=$user_data item=data}>
-                            <{if $smarty.session.tad_signup_adm || $signup_data.uid == $uid}>
+                            <{if $can_add || $signup_data.uid == $uid}>
                                 <div><a href="<{$xoops_url}>/modules/tad_signup/index.php?op=tad_signup_data_show&id=<{$signup_data.id}>"><{$data}></a></div>
                             <{else}>
                                 <{if strpos($col_name, '姓名')!==false}>
@@ -50,7 +50,7 @@
                         <{/foreach}>
                     </td>
                 <{/foreach}>
-                <{if $smarty.session.tad_signup_adm}>
+                <{if $smarty.session.can_add}>
                     <td>
                         <{if $signup_data.accept==='1'}>
                             <div class="text-primary">錄取</div>
@@ -72,7 +72,7 @@
 </table>
 
 
-<{if $smarty.session.tad_signup_adm}>
+<{if $smarty.session.can_add}>
     <div class="bar">
         <a href="javascript:del_action('<{$id}>')" class="btn btn-danger"><i class="fa fa-times" aria-hidden="true"></i> 刪除活動</a>
         <a href="<{$xoops_url}>/modules/tad_signup/index.php?op=tad_signup_actions_edit&id=<{$id}>" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> 編輯活動</a>
