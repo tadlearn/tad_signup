@@ -266,4 +266,22 @@ class Tad_signup_data
         BootstrapTable::render();
     }
 
+    // 更改錄取狀態
+    public static function accept($id, $accept)
+    {
+        global $xoopsDB;
+
+        if (!$_SESSION['tad_signup_adm']) {
+            redirect_header($_SERVER['PHP_SELF'], 3, "您沒有權限使用此功能");
+        }
+
+        $id = (int) $id;
+        $accept = (int) $accept;
+
+        $sql = "update `" . $xoopsDB->prefix("Tad_signup_data") . "` set
+        `accept` = '$accept'
+        where `id` = '$id'";
+        $xoopsDB->queryF($sql) or Utility::web_error($sql, __FILE__, __LINE__);
+    }
+
 }
