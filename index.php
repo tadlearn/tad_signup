@@ -93,6 +93,12 @@ switch ($op) {
         redirect_header($_SERVER['PHP_SELF'] . "?id=$action_id", 3, "成功設定錄取狀態！");
         exit;
 
+    // 複製活動
+    case 'tad_signup_actions_copy':
+        $new_id = Tad_signup_actions::copy($id);
+        header("location: {$_SERVER['PHP_SELF']}?op=tad_signup_actions_edit&id=$new_id");
+        exit;
+
     default:
         if (empty($id)) {
             Tad_signup_actions::index();
