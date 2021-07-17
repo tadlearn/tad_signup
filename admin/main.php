@@ -49,7 +49,7 @@ switch ($op) {
 
     default:
         if (empty($id)) {
-            Tad_signup_actions::index();
+            Tad_signup_actions::index(false);
             $op = 'tad_signup_actions_index';
         } else {
             Tad_signup_actions::show($id);
