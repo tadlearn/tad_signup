@@ -30,6 +30,9 @@ class Tad_signup_data
         $uid = $_SESSION['tad_signup_adm'] ? null : $xoopsUser->uid();
         //抓取預設值
         $db_values = empty($id) ? [] : self::get($id, $uid);
+        if ($id and empty($db_values)) {
+            redirect_header($_SERVER['PHP_SELF'] . "?id={$action_id}", 3, "查無報名無資料，無法修改");
+        }
 
         foreach ($db_values as $col_name => $col_val) {
             $$col_name = $col_val;
@@ -49,21 +52,11 @@ class Tad_signup_data
         $token_form = $token->render();
         $xoopsTpl->assign("token_form", $token_form);
 
-        $action = Tad_signup_actions::get($action_id);
+        $action = Tad_signup_actions::get($action_id, true);
         if (time() > strtotime($action['end_date'])) {
             redirect_header($_SERVER['PHP_SELF'], 3, "已報名截止，無法再進行報名或修改報名");
         } elseif (count($action['signup']) >= $action['number']) {
             redirect_header($_SERVER['PHP_SELF'], 3, "人數已滿，無法再進行報名");
-        }
-
-        $myts = \MyTextSanitizer::getInstance();
-        foreach ($action as $col_name => $col_val) {
-            if ($col_name == 'detail') {
-                $col_val = $myts->displayTarea($col_val, 0, 1, 0, 1, 1);
-            } else {
-                $col_val = $myts->htmlSpecialChars($col_val);
-            }
-            $action[$col_name] = $col_val;
         }
         $xoopsTpl->assign("action", $action);
 
@@ -142,15 +135,7 @@ class Tad_signup_data
         $tdc = $TadDataCenter->getData();
         $xoopsTpl->assign('tdc', $tdc);
 
-        $action = Tad_signup_actions::get($action_id);
-        foreach ($action as $col_name => $col_val) {
-            if ($col_name == 'detail') {
-                $col_val = $myts->displayTarea($col_val, 0, 1, 0, 1, 1);
-            } else {
-                $col_val = $myts->htmlSpecialChars($col_val);
-            }
-            $action[$col_name] = $col_val;
-        }
+        $action = Tad_signup_actions::get($action_id, true);
         $xoopsTpl->assign("action", $action);
 
         $now_uid = $xoopsUser ? $xoopsUser->uid() : 0;
@@ -253,7 +238,7 @@ class Tad_signup_data
         while ($data = $xoopsDB->fetchArray($result)) {
             $TadDataCenter->set_col('id', $data['id']);
             $data['tdc'] = $TadDataCenter->getData();
-            $data['action'] = Tad_signup_actions::get($data['action_id']);
+            $data['action'] = Tad_signup_actions::get($data['action_id'], true);
 
             if ($_SESSION['api_mode'] or $auto_key) {
                 $data_arr[] = $data;
