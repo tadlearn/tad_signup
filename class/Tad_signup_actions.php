@@ -1,10 +1,8 @@
 <?php
-// 如「模組目錄」= signup，則「首字大寫模組目錄」= Signup
-// 如「資料表名」= actions，則「模組物件」= Actions
-
 namespace XoopsModules\Tad_signup;
 
 use XoopsModules\Tadtools\BootstrapTable;
+use XoopsModules\Tadtools\CkEditor;
 use XoopsModules\Tadtools\FormValidator;
 use XoopsModules\Tadtools\My97DatePicker;
 use XoopsModules\Tadtools\SweetAlert;
@@ -67,6 +65,9 @@ class Tad_signup_actions
         $xoopsTpl->assign("token_form", $token_form);
 
         My97DatePicker::render();
+        $CkEditor = new CkEditor('tad_signup', 'detail', $detail);
+        $editor = $CkEditor->render();
+        $xoopsTpl->assign("editor", $editor);
     }
 
     //新增資料
@@ -221,7 +222,7 @@ class Tad_signup_actions
         $data = $xoopsDB->fetchArray($result);
         if ($filter) {
             $myts = \MyTextSanitizer::getInstance();
-            $data['detail'] = $myts->displayTarea($data['detail'], 0, 1, 0, 1, 1);
+            $data['detail'] = $myts->displayTarea($data['detail'], 1, 0, 0, 0, 0);
             $data['title'] = $myts->htmlSpecialChars($data['title']);
         }
         return $data;
@@ -249,8 +250,7 @@ class Tad_signup_actions
         $data_arr = [];
         while ($data = $xoopsDB->fetchArray($result)) {
             $data['title'] = $myts->htmlSpecialChars($data['title']);
-            $data['detail'] = $myts->displayTarea($data['detail'], 0, 1, 0, 1, 1);
-            $data['setup'] = $myts->displayTarea($data['setup'], 0, 1, 0, 1, 1);
+            $data['detail'] = $myts->displayTarea($data['detail'], 1, 0, 0, 0, 0);
             $data['signup'] = Tad_signup_data::get_all($data['id']);
 
             if ($_SESSION['api_mode'] or $auto_key) {
