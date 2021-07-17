@@ -201,7 +201,6 @@ class Tad_signup_actions
         if ($filter) {
             $myts = \MyTextSanitizer::getInstance();
             $data['detail'] = $myts->displayTarea($data['detail'], 0, 1, 0, 1, 1);
-            $data['setup'] = $myts->displayTarea($data['setup'], 0, 1, 0, 1, 1);
             $data['title'] = $myts->htmlSpecialChars($data['title']);
         }
         return $data;
