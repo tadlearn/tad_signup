@@ -27,8 +27,9 @@ class Tad_signup_data
     {
         global $xoopsTpl, $xoopsUser;
 
+        $uid = $_SESSION['tad_signup_adm'] ? null : $xoopsUser->uid();
         //抓取預設值
-        $db_values = empty($id) ? [] : self::get($id);
+        $db_values = empty($id) ? [] : self::get($id, $uid);
 
         foreach ($db_values as $col_name => $col_val) {
             $$col_name = $col_val;
@@ -121,8 +122,13 @@ class Tad_signup_data
             return;
         }
 
+        $uid = $_SESSION['tad_signup_adm'] ? null : $xoopsUser->uid();
+
         $id = (int) $id;
-        $data = self::get($id);
+        $data = self::get($id, $uid);
+        if (empty($data)) {
+            redirect_header($_SERVER['PHP_SELF'], 3, "查無報名資料，無法觀看");
+        }
 
         $myts = \MyTextSanitizer::getInstance();
         foreach ($data as $col_name => $col_val) {
@@ -209,7 +215,7 @@ class Tad_signup_data
     }
 
     //以流水號取得某筆資料
-    public static function get($id = '')
+    public static function get($id = '', $uid = '')
     {
         global $xoopsDB;
 
@@ -217,8 +223,10 @@ class Tad_signup_data
             return;
         }
 
+        $and_uid = $uid ? "and `uid`='$uid'" : '';
+
         $sql = "select * from `" . $xoopsDB->prefix("Tad_signup_data") . "`
-        where `id` = '{$id}'";
+        where `id` = '{$id}' $and_uid";
         $result = $xoopsDB->query($sql) or Utility::web_error($sql, __FILE__, __LINE__);
         $data = $xoopsDB->fetchArray($result);
         return $data;
