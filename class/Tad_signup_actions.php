@@ -14,9 +14,9 @@ class Tad_signup_actions
     //列出所有資料
     public static function index($only_enable = true)
     {
-        global $xoopsTpl, $xoopsUser, $xoopsModuleConfig;
+        global $xoopsTpl, $xoopsUser;
 
-        $all_data = self::get_all($only_enable, false, $xoopsModuleConfig['show_number']);
+        $all_data = self::get_all($only_enable);
         $xoopsTpl->assign('all_data', $all_data);
 
         $now_uid = $xoopsUser ? $xoopsUser->uid() : 0;
@@ -229,22 +229,25 @@ class Tad_signup_actions
     }
 
     //取得所有資料陣列
-    public static function get_all($only_enable = true, $auto_key = false, $show_number = 20, $order = ", `action_date` desc")
+    public static function get_all($only_enable = true, $auto_key = false, $show_number = 0, $order = ", `action_date` desc")
     {
         global $xoopsDB, $xoopsModuleConfig, $xoopsTpl;
         $myts = \MyTextSanitizer::getInstance();
 
         $and_enable = $only_enable ? "and `enable` = '1' and `end_date` >= now() " : '';
 
-        $sql = "select * from `" . $xoopsDB->prefix("tad_signup_actions") . "` where 1 $and_enable order by `enable` $order";
+        $limit = $show_number ? "limit 0, $show_number" : '';
+        $sql = "select * from `" . $xoopsDB->prefix("tad_signup_actions") . "` where 1 $and_enable order by `enable` $order $limit";
 
-        //Utility::getPageBar($原sql語法, 每頁顯示幾筆資料, 最多顯示幾個頁數選項);
-        $PageBar = Utility::getPageBar($sql, $show_number, 10);
-        $bar = $PageBar['bar'];
-        $sql = $PageBar['sql'];
-        $total = $PageBar['total'];
-        $xoopsTpl->assign('bar', $bar);
-        $xoopsTpl->assign('total', $total);
+        if (!$show_number) {
+            //Utility::getPageBar($原sql語法, 每頁顯示幾筆資料, 最多顯示幾個頁數選項);
+            $PageBar = Utility::getPageBar($sql, $xoopsModuleConfig['show_number'], 10);
+            $bar = $PageBar['bar'];
+            $sql = $PageBar['sql'];
+            $total = $PageBar['total'];
+            $xoopsTpl->assign('bar', $bar);
+            $xoopsTpl->assign('total', $total);
+        }
 
         $result = $xoopsDB->query($sql) or Utility::web_error($sql, __FILE__, __LINE__);
         $data_arr = [];
