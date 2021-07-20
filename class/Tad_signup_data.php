@@ -57,7 +57,7 @@ class Tad_signup_data
             redirect_header($_SERVER['PHP_SELF'], 3, "已報名截止，無法再進行報名或修改報名");
         } elseif (!$action['enable']) {
             redirect_header($_SERVER['PHP_SELF'], 3, "該報名已關閉，無法再進行報名或修改報名");
-        } elseif (count($action['signup']) >= $action['number']) {
+        } elseif (count($action['signup']) >= ($action['number'] + $action['candidate'])) {
             redirect_header($_SERVER['PHP_SELF'], 3, "人數已滿，無法再進行報名");
         }
         $xoopsTpl->assign("action", $action);
@@ -105,6 +105,12 @@ class Tad_signup_data
         $TadDataCenter->set_col('id', $id);
         $TadDataCenter->saveData();
 
+        $action = Tad_signup_actions::get($action_id);
+        $action['signup'] = self::get_all($action_id);
+        if (count($action['signup']) > $action['number']) {
+            $TadDataCenter->set_col('data_id', $id);
+            $TadDataCenter->saveCustomData(['tag' => ['候補']]);
+        }
         return $id;
     }
 
@@ -241,6 +247,8 @@ class Tad_signup_data
             $TadDataCenter->set_col('id', $data['id']);
             $data['tdc'] = $TadDataCenter->getData();
             $data['action'] = Tad_signup_actions::get($data['action_id'], true);
+            $TadDataCenter->set_col('data_id', $data['id']);
+            $data['tag'] = $TadDataCenter->getData('tag', 0);
 
             if ($_SESSION['api_mode'] or $auto_key) {
                 $data_arr[] = $data;

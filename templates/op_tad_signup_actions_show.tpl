@@ -68,7 +68,12 @@
                         <{/if}>
                     <{/if}>
                 </td>
-                <td><{$signup_data.signup_date}></td>
+                <td>
+                    <{$signup_data.signup_date}>
+                    <{if $signup_data.tag}>
+                        <div><span class="badge badge-primary"><{$signup_data.tag}></span></div>
+                    <{/if}>
+                </td>
             </tr>
         <{/foreach}>
     </tbody>
