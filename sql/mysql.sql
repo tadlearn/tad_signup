@@ -8,6 +8,7 @@ CREATE TABLE `tad_signup_actions` (
   `setup` text NOT NULL,
   `uid` mediumint(8) unsigned NOT NULL,
   `enable` enum('1','0') NOT NULL,
+  `candidate` tinyint(3) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 

@@ -38,8 +38,9 @@ function xoops_module_update_tad_signup(XoopsModule $module, $old_version)
 {
     global $xoopsDB;
 
-    if (Update::chk_1()) {
-        Update::go_1();
+    // 新增候補欄位
+    if (Update::chk_candidate()) {
+        Update::go_candidate();
     }
 
     return true;
