@@ -48,8 +48,8 @@ $modversion['hasMain'] = 1;
 // $modversion['sub'][] = ['name' => '子選項文字', 'url' => '子選項連結位址'];
 
 //---模組自動功能---//
-// $modversion['onInstall'] = "include/install.php";
-// $modversion['onUpdate'] = "include/update.php";
+$modversion['onInstall'] = "include/onInstall.php";
+// $modversion['onUpdate'] = "include/onUpdate.php";
 // $modversion['onUninstall'] = "include/onUninstall.php";
 
 //---樣板設定---//
