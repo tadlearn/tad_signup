@@ -4,6 +4,11 @@ if (!class_exists('XoopsModules\Tadtools\Utility')) {
     require XOOPS_ROOT_PATH . '/modules/tadtools/preloads/autoloader.php';
 }
 
+use XoopsModules\Tad_signup\Update;
+if (!class_exists('XoopsModules\Tad_signup\Update')) {
+    require dirname(__DIR__) . '/preloads/autoloader.php';
+}
+
 // 安裝前
 function xoops_module_pre_install_tad_signup(XoopsModule $module)
 {
@@ -19,7 +24,7 @@ function xoops_module_install_tad_signup(XoopsModule $module)
     Utility::mk_dir(XOOPS_ROOT_PATH . "/uploads/tad_signup/image");
     Utility::mk_dir(XOOPS_ROOT_PATH . "/uploads/tad_signup/image/.thumbs");
 
-    $groupid = mk_group("活動報名管理");
+    $groupid = Update::mk_group("活動報名管理");
     $perm_handler = xoops_getHandler('groupperm');
     $perm = $perm_handler->create();
     $perm->setVar('gperm_groupid', $groupid);
