@@ -61,6 +61,16 @@ $modversion['hasSearch'] = 1;
 $modversion['search'] = ['file' => 'include/search.php', 'func' => 'tad_signup_search'];
 
 //---區塊設定---//
+$modversion['blocks'][] = [
+    'file' => 'action_list.php',
+    'name' => '可報名活動一覽',
+    'description' => '列出所有可報名的活動',
+    'show_func' => 'action_list',
+    'template' => 'action_list.tpl',
+    'edit_func' => 'action_list_edit',
+    'options' => '5|, `action_date` desc',
+];
+
 // $modversion['blocks'][] = [
 //     'file' => '區塊檔.php',
 //     'name' => '區塊名稱',
