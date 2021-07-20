@@ -1,10 +1,13 @@
 <?php
+use XoopsModules\Tadtools\Utility;
 use XoopsModules\Tad_signup\Tad_signup_actions;
+use XoopsModules\Tad_signup\Tad_signup_data;
 
 // 活動報名焦點
 function action_signup($options)
 {
     $block = Tad_signup_actions::get($options[0], true);
+    $block['signup'] = Tad_signup_data::get_all($options[0], null, true);
     return $block;
 }
 
