@@ -89,6 +89,7 @@ class Tad_signup_actions
         $uid = (int) $uid;
         $number = (int) $number;
         $enable = (int) $enable;
+        $candidate = (int) $candidate;
 
         $sql = "insert into `" . $xoopsDB->prefix("tad_signup_actions") . "` (
         `title`,
@@ -98,7 +99,8 @@ class Tad_signup_actions
         `number`,
         `setup`,
         `uid`,
-        `enable`
+        `enable`,
+        `candidate`
         ) values(
         '{$title}',
         '{$detail}',
@@ -107,7 +109,8 @@ class Tad_signup_actions
         '{$number}',
         '{$setup}',
         '{$uid}',
-        '{$enable}'
+        '{$enable}',
+        '{$candidate}'
         )";
         $xoopsDB->queryF($sql) or Utility::web_error($sql, __FILE__, __LINE__);
 
@@ -163,6 +166,7 @@ class Tad_signup_actions
         $uid = (int) $uid;
         $number = (int) $number;
         $enable = (int) $enable;
+        $candidate = (int) $candidate;
 
         $now_uid = $xoopsUser ? $xoopsUser->uid() : 0;
         if ($uid != $now_uid && !$_SESSION['tad_signup_adm']) {
@@ -177,7 +181,8 @@ class Tad_signup_actions
         `number` = '{$number}',
         `setup` = '{$setup}',
         `uid` = '{$uid}',
-        `enable` = '{$enable}'
+        `enable` = '{$enable}',
+        `candidate` = '{$candidate}'
         where `id` = '$id'";
         $xoopsDB->queryF($sql) or Utility::web_error($sql, __FILE__, __LINE__);
 
@@ -286,7 +291,8 @@ class Tad_signup_actions
         `number`,
         `setup`,
         `uid`,
-        `enable`
+        `enable`,
+        `candidate`
         ) values(
         '{$action['title']}_copy',
         '{$action['detail']}',
@@ -295,7 +301,8 @@ class Tad_signup_actions
         '{$action['number']}',
         '{$action['setup']}',
         '{$uid}',
-        '0'
+        '0',
+        '{$action['candidate']}'
         )";
         $xoopsDB->queryF($sql) or Utility::web_error($sql, __FILE__, __LINE__);
 
