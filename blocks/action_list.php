@@ -3,9 +3,9 @@ use XoopsModules\Tadtools\Utility;
 use XoopsModules\Tad_signup\Tad_signup_actions;
 
 // 可報名活動一覽
-function action_list()
+function action_list($options)
 {
-    $block = Tad_signup_actions::get_all(true);
+    $block = Tad_signup_actions::get_all(true, false, $options[0], $options[1]);
     return $block;
 }
 
