@@ -107,7 +107,7 @@ switch ($op) {
         header("location: {$_SERVER['PHP_SELF']}?op=tad_signup_actions_edit&id=$new_id");
         exit;
 
-    //修改報名表單
+    //修改報名表單(CSV)
     case 'tad_signup_data_preview_csv':
         Tad_signup_data::preview_csv($id);
         break;
@@ -116,6 +116,11 @@ switch ($op) {
     case 'tad_signup_data_import_csv':
         Tad_signup_data::import_csv($id);
         redirect_header("{$_SERVER['PHP_SELF']}?id=$id", 3, "成功匯入報名資料！");
+        break;
+
+    //修改報名表單(Excel)
+    case 'tad_signup_data_preview_excel':
+        Tad_signup_data::preview_excel($id);
         break;
 
     default:
