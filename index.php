@@ -107,6 +107,11 @@ switch ($op) {
         header("location: {$_SERVER['PHP_SELF']}?op=tad_signup_actions_edit&id=$new_id");
         exit;
 
+    //修改報名表單
+    case 'tad_signup_data_preview_csv':
+        Tad_signup_data::preview_csv($id);
+        break;
+
     default:
         if (empty($id)) {
             Tad_signup_actions::index($xoopsModuleConfig['only_enable']);
