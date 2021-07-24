@@ -31,6 +31,7 @@
                     <{if $smarty.session.can_add && ($action.uid==$now_uid || $smarty.session.tad_signup_adm)}>
                         <a href="<{$xoops_url}>/modules/tad_signup/index.php?op=tad_signup_actions_edit&id=<{$action.id}>" class="btn btn-sm btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> 編輯活動</a>
                         <a href="<{$xoops_url}>/modules/tad_signup/index.php?op=tad_signup_actions_copy&id=<{$action.id}>" class="btn btn-sm btn-info"><i class="fa fa-copy" aria-hidden="true"></i> 複製活動</a>
+                        <a href="<{$xoops_url}>/modules/tad_signup/html.php?id=<{$action.id}>" class="btn btn-sm btn-primary"><i class="fa fa-html5" aria-hidden="true"></i> 匯出 HTML</a>
                     <{/if}>
 
                     <{if $action.enable && ($action.number + $action.candidate) > $action.signup|@count && $xoops_isuser && $action.end_date|strtotime >= $smarty.now}>
