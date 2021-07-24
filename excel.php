@@ -39,9 +39,36 @@ foreach ($head_row as $head_data) {
 $head[] = '錄取';
 $head[] = '報名日期';
 $head[] = '身份';
-
+$row = 1;
 foreach ($head as $column => $value) {
-    $objActSheet->setCellValueByColumnAndRow($column, 1, $value); //直欄從0開始，橫列從1開始
+    $objActSheet->setCellValueByColumnAndRow($column, $row, $value); //直欄從0開始，橫列從1開始
+}
+
+// 抓出內容部份
+
+if ($type == 'signup') {
+    $signup = Tad_signup_data::get_all($action['id']);
+    foreach ($signup as $signup_data) {
+        $iteam = [];
+        foreach ($signup_data['tdc'] as $user_data) {
+            $iteam[] = implode('|', $user_data);
+        }
+
+        if ($signup_data['accept'] === '1') {
+            $iteam[] = '錄取';
+        } elseif ($signup_data['accept'] === '0') {
+            $iteam[] = '未錄取';
+        } else {
+            $iteam[] = '尚未設定';
+        }
+        $iteam[] = $signup_data['signup_date'];
+        $iteam[] = $signup_data['tag'];
+
+        $row++;
+        foreach ($iteam as $column => $value) {
+            $objActSheet->setCellValueByColumnAndRow($column, $row, $value); //直欄從0開始，橫列從1開始
+        }
+    }
 }
 
 // $title = (_CHARSET === 'UTF-8') ? iconv('UTF-8', 'Big5', $title) : $title;
