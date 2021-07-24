@@ -85,5 +85,6 @@
     <div class="bar">
         <a href="javascript:del_action('<{$id}>')" class="btn btn-danger"><i class="fa fa-times" aria-hidden="true"></i> 刪除活動</a>
         <a href="<{$xoops_url}>/modules/tad_signup/index.php?op=tad_signup_actions_edit&id=<{$id}>" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> 編輯活動</a>
+        <a href="<{$xoops_url}>/modules/tad_signup/csv.php?id=<{$id}>" class="btn btn-primary"><i class="fa fa-file-text-o" aria-hidden="true"></i> 匯出 CSV</a>
     </div>
 <{/if}>
