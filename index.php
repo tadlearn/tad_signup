@@ -112,6 +112,12 @@ switch ($op) {
         Tad_signup_data::preview_csv($id);
         break;
 
+    //批次匯入 CSV
+    case 'tad_signup_data_import_csv':
+        Tad_signup_data::import_csv($id);
+        redirect_header("{$_SERVER['PHP_SELF']}?id=$id", 3, "成功匯入報名資料！");
+        break;
+
     default:
         if (empty($id)) {
             Tad_signup_actions::index($xoopsModuleConfig['only_enable']);
