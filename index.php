@@ -129,6 +129,11 @@ switch ($op) {
         redirect_header("{$_SERVER['PHP_SELF']}?id=$id", 3, "成功匯入報名資料！");
         break;
 
+    // 進行pdf的匯出設定
+    case 'tad_signup_data_pdf_setup':
+        Tad_signup_data::pdf_setup($id);
+        break;
+
     default:
         if (empty($id)) {
             Tad_signup_actions::index($xoopsModuleConfig['only_enable']);
