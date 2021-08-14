@@ -100,9 +100,10 @@
 
         <div class="btn-group" role="group" aria-label="Basic example">
             <a href="#" class="btn btn-secondary"><i class="fa fa-file-text-o" aria-hidden="true"></i> 匯出報名名單：</a>
-            <a href="<{$xoops_url}>/modules/tad_signup/csv.php?id=<{$id}>&type=signup" class="btn btn-primary"><i class="fa fa-file-text-o" aria-hidden="true"></i> CSV</a>
+            <a href="<{$xoops_url}>/modules/tad_signup/csv.php?id=<{$id}>&type=signup" class="btn btn-info"><i class="fa fa-file-text-o" aria-hidden="true"></i> CSV</a>
             <a href="<{$xoops_url}>/modules/tad_signup/excel.php?id=<{$id}>&type=signup" class="btn btn-success"><i class="fa fa-file-excel-o" aria-hidden="true"></i> Excel</a>
             <a href="<{$xoops_url}>/modules/tad_signup/pdf.php?id=<{$id}>" class="btn btn-danger"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</a>
+            <a href="<{$xoops_url}>/modules/tad_signup/word.php?id=<{$id}>" class="btn btn-primary"><i class="fa fa-file-word-o" aria-hidden="true"></i> Word</a>
         </div>
     </div>
 
