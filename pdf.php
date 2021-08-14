@@ -10,7 +10,6 @@ if (!$_SESSION['can_add']) {
 }
 
 $id = Request::getInt('id');
-$type = Request::getString('type');
 
 $action = Tad_signup_actions::get($id);
 
