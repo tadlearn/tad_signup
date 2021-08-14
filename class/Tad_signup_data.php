@@ -593,12 +593,26 @@ class Tad_signup_data
         $action = Tad_signup_actions::get($action_id);
         $xoopsTpl->assign('action', $action);
 
-        // 製作標題
-        $from_arr = self::get_head($action);
+        $TadDataCenter = new TadDataCenter('tad_signup');
+        $TadDataCenter->set_col('pdf_setup_id', $action_id);
+        $pdf_setup_col = $TadDataCenter->getData('pdf_setup_col', 0);
+        $to_arr = explode(',', $pdf_setup_col);
 
-        $to_arr = $hidden_arr = [];
+        // 製作標題
+        $head_arr = self::get_head($action);
+        $from_arr = array_diff($head_arr, $to_arr);
+
+        $hidden_arr = [];
 
         $tmt_box = Tmt::render('pdf_setup_col', $from_arr, $to_arr, $hidden_arr, true, false);
         $xoopsTpl->assign('tmt_box', $tmt_box);
+    }
+
+    //儲存pdf的匯出設定
+    public static function pdf_setup_save($action_id, $pdf_setup_col = '')
+    {
+        $TadDataCenter = new TadDataCenter('tad_signup');
+        $TadDataCenter->set_col('pdf_setup_id', $action_id);
+        $TadDataCenter->saveCustomData(['pdf_setup_col' => [$pdf_setup_col]]);
     }
 }

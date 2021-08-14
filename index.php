@@ -15,6 +15,7 @@ $id = Request::getInt('id');
 $action_id = Request::getInt('action_id');
 $accept = Request::getInt('accept');
 $files_sn = Request::getInt('files_sn');
+$pdf_setup_col = Request::getString('pdf_setup_col');
 
 /*-----------執行動作判斷區----------*/
 switch ($op) {
@@ -133,6 +134,12 @@ switch ($op) {
     case 'tad_signup_data_pdf_setup':
         Tad_signup_data::pdf_setup($id);
         break;
+
+    //儲存pdf的匯出設定
+    case 'tad_signup_data_pdf_setup_save':
+        Tad_signup_data::pdf_setup_save($action_id, $pdf_setup_col);
+        header("location: pdf_signup.php?id=$action_id");
+        exit;
 
     default:
         if (empty($id)) {
