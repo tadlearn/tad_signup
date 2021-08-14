@@ -28,8 +28,9 @@ $right_paraStyle = ['align' => 'right', 'valign' => 'center'];
 
 $filename = 'word';
 
-$objWriter = IOFactory::createWriter($phpWord, 'Word2007');
-header('Content-Type: application/vnd.ms-word');
-header("Content-Disposition: attachment;filename={$filename}.docx");
+$objWriter = IOFactory::createWriter($phpWord, 'ODText');
+header('Content-Type: application/vnd.oasis.opendocument.text');
+header("Content-Disposition: attachment;filename={$filename}.odt");
+
 header('Cache-Control: max-age=0');
 $objWriter->save('php://output');

@@ -99,7 +99,7 @@
         <a href="<{$xoops_url}>/modules/tad_signup/pdf.php?id=<{$id}>" class="btn btn-danger"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> 匯出報名名單 PDF</a>
     </div>
     <div class="bar">
-        <a href="<{$xoops_url}>/modules/tad_signup/index.php?op=tad_signup_data_pdf_setup&id=<{$id}>" class="btn btn-danger"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> 匯出簽到表 PDF</a>
+        <a href="<{$xoops_url}>/modules/tad_signup/index.php?op=tad_signup_data_pdf_setup&id=<{$id}>" class="btn btn-info"><i class="fa fa-save" aria-hidden="true"></i> 產生簽到表</a>
     </div>
 
     <form action="index.php" method="post" class="my-4" enctype="multipart/form-data">
