@@ -17,3 +17,9 @@ define('_MB_TAD_SIGNUP_PEOPLE', '人');
 define('_MB_TAD_SIGNUP_APPLIED', '，已報名');
 define('_MB_TAD_SIGNUP_IN_PROGRESS', '報名中');
 define('_MB_TAD_SIGNUP_CANT_APPLY', '無法報名');
+
+// templates\blocks\action_signup.tpl
+define('_MB_TAD_SIGNUP_ACTION_DATE', '活動日期');
+define('_MB_TAD_SIGNUP_END_DATE', '報名截止');
+define('_MB_TAD_SIGNUP_STATUS', '報名狀況');
+define('_MB_TAD_SIGNUP_APPLY_NOW', '立即報名');
