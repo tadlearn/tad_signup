@@ -2,10 +2,17 @@
 xoops_loadLanguage('main', 'tadtools');
 
 define('_MD_TAD_SIGNUP_ID', '編號');
+define('_MD_TAD_SIGNUP_TITLE', '活動標題');
+define('_MD_TAD_SIGNUP_DETAIL', '活動說明');
 define('_MD_TAD_SIGNUP_ACTION_DATE', '活動日期');
+define('_MD_TAD_SIGNUP_NUMBER', '報名人數');
 define('_MD_TAD_SIGNUP_END_DATE', '報名截止');
+define('_MD_TAD_SIGNUP_END_DATE_COL', '報名截止日期');
 define('_MD_TAD_SIGNUP_STATUS', '報名狀況');
 define('_MD_TAD_SIGNUP_CANDIDATES_QUOTA', '可候補人數');
+define('_MD_TAD_SIGNUP_SETUP', '欄位設定');
+define('_MD_TAD_SIGNUP_ENABLE', '是否啟用');
+define('_MD_TAD_SIGNUP_UPLOADS', '上傳附件');
 define('_MD_TAD_SIGNUP_APPLY_NOW', '立即報名');
 define('_MD_TAD_SIGNUP_CANDIDATE', '候補');
 define('_MD_TAD_SIGNUP_ACCEPT', '錄取');
@@ -26,6 +33,8 @@ define('_MD_TAD_SIGNUP_IMPORT_SUCCESS', '成功匯入報名資料！');
 define('_MD_TAD_SIGNUP_MY_RECORD', '我的報名紀錄');
 define('_MD_TAD_SIGNUP_SIGNIN_TABLE', '簽到表');
 define('_MD_TAD_SIGNUP_SIGNIN', '簽名');
+define('_MD_TAD_SIGNUP_ACTION_SETTING', '活動設定');
+define('_MD_TAD_SIGNUP_KEYIN', '請輸入');
 
 // class\Tad_signup_data.php
 define('_MD_TAD_SIGNUP_CANNOT_BE_MODIFIED', '查無報名無資料，無法修改');
