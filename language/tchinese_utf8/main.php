@@ -19,6 +19,7 @@ define('_MD_TAD_SIGNUP_CANDIDATE', '候補');
 define('_MD_TAD_SIGNUP_ACCEPT', '錄取');
 define('_MD_TAD_SIGNUP_NOT_ACCEPT', '未錄取');
 define('_MD_TAD_SIGNUP_ACCEPT_NOT_YET', '尚未設定');
+define('_MD_TAD_SIGNUP_ANNOUNCEMENT_NOT_YET', '尚未公佈');
 define('_MD_TAD_SIGNUP_APPLY_LIST', '報名名單');
 define('_MD_TAD_SIGNUP_APPLY_DATE', '報名日期');
 define('_MD_TAD_SIGNUP_IDENTITY', '身份');
@@ -54,6 +55,7 @@ define('_MD_TAD_SIGNUP_IMPORT', '匯入');
 define('_MD_TAD_SIGNUP_DOWNLOAD', '下載');
 define('_MD_TAD_SIGNUP_IMPORT_FILE', '匯入格式檔');
 define('_MD_TAD_SIGNUP_APPLY_FORM', '報名表');
+define('_MD_TAD_SIGNUP_ACCEPT_STATUS', '錄取狀況');
 
 // class\Tad_signup_data.php
 define('_MD_TAD_SIGNUP_CANNOT_BE_MODIFIED', '查無報名無資料，無法修改');
