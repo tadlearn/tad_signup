@@ -26,6 +26,9 @@ define('_MD_TAD_SIGNUP_ADMIN', '活動報名管理');
 define('_MD_TAD_SIGNUP_CREATE_SUCCESS', '成功建立活動！');
 define('_MD_TAD_SIGNUP_UPDATE_SUCCESS', '成功修改活動！');
 define('_MD_TAD_SIGNUP_DESTROY_SUCCESS', '成功刪除活動！');
+define('_MD_TAD_SIGNUP_DESTROY_ACTION', '刪除活動');
+define('_MD_TAD_SIGNUP_EDIT_ACTION', '編輯活動');
+define('_MD_TAD_SIGNUP_EXPORT_HTML', '匯出 HTML');
 define('_MD_TAD_SIGNUP_APPLY_SUCCESS', '成功報名活動！');
 define('_MD_TAD_SIGNUP_APPLY_UPDATE_SUCCESS', '成功修改報名資料！');
 define('_MD_TAD_SIGNUP_APPLY_DESTROY_SUCCESS', '成功刪除報名資料！');
@@ -40,6 +43,16 @@ define('_MD_TAD_SIGNUP_ACTION_LIST', '活動列表');
 define('_MD_TAD_SIGNUP_IN_PROGRESS', '報名中');
 define('_MD_TAD_SIGNUP_CANT_APPLY', '無法報名');
 define('_MD_TAD_SIGNUP_ADD_ACTION', '新增活動');
+define('_MD_TAD_SIGNUP_APPLIED_DATA', '已報名表資料');
+define('_MD_TAD_SIGNUP_APPLY_MAX', '報名人數上限');
+define('_MD_TAD_SIGNUP_NAME', '姓名');
+define('_MD_TAD_SIGNUP_CHANGE_TO', '改成');
+define('_MD_TAD_SIGNUP_EXPORT_SIGNIN_TABLE', '產生簽到表');
+define('_MD_TAD_SIGNUP_EXPORT_APPLY_LIST', '匯出報名名單');
+define('_MD_TAD_SIGNUP_IMPORT_APPLY_LIST', '匯入報名名單');
+define('_MD_TAD_SIGNUP_IMPORT', '匯入');
+define('_MD_TAD_SIGNUP_DOWNLOAD', '下載');
+define('_MD_TAD_SIGNUP_IMPORT_FILE', '匯入格式檔');
 
 // class\Tad_signup_data.php
 define('_MD_TAD_SIGNUP_CANNOT_BE_MODIFIED', '查無報名無資料，無法修改');
