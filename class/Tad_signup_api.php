@@ -3,6 +3,7 @@ namespace XoopsModules\Tad_signup;
 
 use XoopsModules\Tadtools\SimpleRest;
 use XoopsModules\Tad_signup\Tad_signup_actions;
+use XoopsModules\Tad_signup\Tad_signup_data;
 
 require dirname(dirname(dirname(__DIR__))) . '/mainfile.php';
 
@@ -66,6 +67,13 @@ class Tad_signup_api extends SimpleRest
     {
         $actions = Tad_signup_actions::get_all($only_enable);
         return $this->encodeJson($actions);
+    }
+
+    // 取得活動所有報名資料
+    public function tad_signup_data_index($action_id)
+    {
+        $data = $this->token ? Tad_signup_data::get_all($action_id) : [];
+        return $this->encodeJson($data);
     }
 
 }
