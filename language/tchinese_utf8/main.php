@@ -1,6 +1,7 @@
 <?php
 xoops_loadLanguage('main', 'tadtools');
 
+define('_MD_TAD_SIGNUP_ID', '編號');
 define('_MD_TAD_SIGNUP_ACTION_DATE', '活動日期');
 define('_MD_TAD_SIGNUP_END_DATE', '報名截止');
 define('_MD_TAD_SIGNUP_STATUS', '報名狀況');
@@ -23,6 +24,8 @@ define('_MD_TAD_SIGNUP_APPLY_DESTROY_SUCCESS', '成功刪除報名資料！');
 define('_MD_TAD_SIGNUP_ACCEPT_SUCCESS', '成功設定錄取狀態！');
 define('_MD_TAD_SIGNUP_IMPORT_SUCCESS', '成功匯入報名資料！');
 define('_MD_TAD_SIGNUP_MY_RECORD', '我的報名紀錄');
+define('_MD_TAD_SIGNUP_SIGNIN_TABLE', '簽到表');
+define('_MD_TAD_SIGNUP_SIGNIN', '簽名');
 
 // class\Tad_signup_data.php
 define('_MD_TAD_SIGNUP_CANNOT_BE_MODIFIED', '查無報名無資料，無法修改');
