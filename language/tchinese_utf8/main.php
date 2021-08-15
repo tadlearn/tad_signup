@@ -6,6 +6,7 @@ define('_MD_TAD_SIGNUP_CANDIDATE', '候補');
 define('_MD_TAD_SIGNUP_ACCEPT', '錄取');
 define('_MD_TAD_SIGNUP_APPLY_DATE', '報名日期');
 define('_MD_TAD_SIGNUP_IDENTITY', '身份');
+define('_MD_TAD_SIGNUP_ADMIN', '活動報名管理');
 
 // class\Tad_signup_data.php
 define('_MD_TAD_SIGNUP_CANNOT_BE_MODIFIED', '查無報名無資料，無法修改');
