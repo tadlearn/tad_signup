@@ -57,7 +57,7 @@ define('_MD_TAD_SIGNUP_IMPORT_FILE', '匯入格式檔');
 define('_MD_TAD_SIGNUP_APPLY_FORM', '報名表');
 define('_MD_TAD_SIGNUP_ACCEPT_STATUS', '錄取狀況');
 define('_MD_TAD_SIGNUP_SETUP_SIGNIN_TABLE', '簽到表欄位設定');
-
+define('_MD_TAD_SIGNUP_DATA_PREVIEW', '報名資料預覽');
 
 // class\Tad_signup_data.php
 define('_MD_TAD_SIGNUP_CANNOT_BE_MODIFIED', '查無報名無資料，無法修改');
