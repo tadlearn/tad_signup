@@ -2,6 +2,10 @@
 xoops_loadLanguage('main', 'tadtools');
 
 define('_MD_TAD_SIGNUP_ACTION_DATE', '活動日期');
+define('_MD_TAD_SIGNUP_END_DATE', '報名截止');
+define('_MD_TAD_SIGNUP_STATUS', '報名狀況');
+define('_MD_TAD_SIGNUP_CANDIDATES_QUOTA', '可候補人數');
+define('_MD_TAD_SIGNUP_APPLY_NOW', '立即報名');
 define('_MD_TAD_SIGNUP_CANDIDATE', '候補');
 define('_MD_TAD_SIGNUP_ACCEPT', '錄取');
 define('_MD_TAD_SIGNUP_NOT_ACCEPT', '未錄取');
