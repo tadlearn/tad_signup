@@ -268,7 +268,7 @@ class Tad_signup_actions
         $limit = $show_number ? "limit 0, $show_number" : '';
         $sql = "select * from `" . $xoopsDB->prefix("tad_signup_actions") . "` where 1 $and_enable order by `enable` $order $limit";
 
-        if (!$show_number) {
+        if (!$show_number && !$_SESSION['api_mode']) {
             //Utility::getPageBar($原sql語法, 每頁顯示幾筆資料, 最多顯示幾個頁數選項);
             $PageBar = Utility::getPageBar($sql, $xoopsModuleConfig['show_number'], 10);
             $bar = $PageBar['bar'];
@@ -283,7 +283,7 @@ class Tad_signup_actions
         while ($data = $xoopsDB->fetchArray($result)) {
             $data['title'] = $myts->htmlSpecialChars($data['title']);
             $data['detail'] = $myts->displayTarea($data['detail'], 1, 0, 0, 0, 0);
-            $data['signup'] = Tad_signup_data::get_all($data['id']);
+            $data['signup_count'] = count(Tad_signup_data::get_all($data['id']));
 
             if ($_SESSION['api_mode'] or $auto_key) {
                 $data_arr[] = $data;

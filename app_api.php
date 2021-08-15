@@ -11,6 +11,10 @@ $token = Request::getString('token');
 $api = new Tad_signup_api($token);
 
 switch ($op) {
+    // 取得所有活動
+    case 'tad_signup_actions_index':
+        echo $api->tad_signup_actions_index($xoopsModuleConfig['only_enable']);
+        break;
 
     default:
         echo $api->user();

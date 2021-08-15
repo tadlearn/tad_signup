@@ -7,7 +7,7 @@ use XoopsModules\Tad_signup\Tad_signup_data;
 function action_signup($options)
 {
     $block = Tad_signup_actions::get($options[0], true);
-    $block['signup'] = Tad_signup_data::get_all($options[0], null, true);
+    $block['signup_count'] = count(Tad_signup_data::get_all($options[0], null, true));
     return $block;
 }
 
