@@ -32,10 +32,10 @@ class Tad_signup_api extends SimpleRest
                 $this->user['tad_signup_adm'] = $_SESSION['tad_signup_adm'] = ($this->uid) ? $this->isAdmin('tad_signup') : false;
             }
 
-            // 判斷有無XXX的權限
-            // if (!isset($this->user['權限名'])) {
-            //     $_SESSION['權限名'] = $this->user['權限名'] = $this->powerChk('tad_signup', 權限編號);
-            // }
+            // 判斷有無開設活動的權限
+            if (!isset($this->user['can_add'])) {
+                $_SESSION['can_add'] = $this->user['can_add'] = $this->powerChk('tad_signup', '1');
+            }
 
         }
     }
@@ -72,7 +72,8 @@ class Tad_signup_api extends SimpleRest
     // 取得活動所有報名資料
     public function tad_signup_data_index($action_id)
     {
-        $data = $this->token ? Tad_signup_data::get_all($action_id) : [];
+        $action = Tad_signup_actions::get($action_id);
+        $data = ($this->user['tad_signup_adm'] || ($this->user['can_add'] && $action['uid'] == $this->uid)) ? Tad_signup_data::get_all($action_id) : [];
         return $this->encodeJson($data);
     }
 
