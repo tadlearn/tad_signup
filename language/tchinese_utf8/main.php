@@ -14,6 +14,14 @@ define('_MD_TAD_SIGNUP_APPLY_LIST', '報名名單');
 define('_MD_TAD_SIGNUP_APPLY_DATE', '報名日期');
 define('_MD_TAD_SIGNUP_IDENTITY', '身份');
 define('_MD_TAD_SIGNUP_ADMIN', '活動報名管理');
+define('_MD_TAD_SIGNUP_CREATE_SUCCESS', '成功建立活動！');
+define('_MD_TAD_SIGNUP_UPDATE_SUCCESS', '成功修改活動！');
+define('_MD_TAD_SIGNUP_DESTROY_SUCCESS', '成功刪除活動！');
+define('_MD_TAD_SIGNUP_APPLY_SUCCESS', '成功報名活動！');
+define('_MD_TAD_SIGNUP_APPLY_UPDATE_SUCCESS', '成功修改報名資料！');
+define('_MD_TAD_SIGNUP_APPLY_DESTROY_SUCCESS', '成功刪除報名資料！');
+define('_MD_TAD_SIGNUP_ACCEPT_SUCCESS', '成功設定錄取狀態！');
+define('_MD_TAD_SIGNUP_IMPORT_SUCCESS', '成功匯入報名資料！');
 
 // class\Tad_signup_data.php
 define('_MD_TAD_SIGNUP_CANNOT_BE_MODIFIED', '查無報名無資料，無法修改');

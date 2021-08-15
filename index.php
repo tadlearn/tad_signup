@@ -34,7 +34,7 @@ switch ($op) {
     case 'tad_signup_actions_store':
         $id = Tad_signup_actions::store();
         // header("location: {$_SERVER['PHP_SELF']}?id=$id");
-        redirect_header($_SERVER['PHP_SELF'] . "?id=$id", 3, "成功建立活動！");
+        redirect_header($_SERVER['PHP_SELF'] . "?id=$id", 3, _MD_TAD_SIGNUP_CREATE_SUCCESS);
         exit;
 
     //修改用表單
@@ -47,14 +47,14 @@ switch ($op) {
     case 'tad_signup_actions_update':
         Tad_signup_actions::update($id);
         // header("location: {$_SERVER['PHP_SELF']}?id=$id");
-        redirect_header($_SERVER['PHP_SELF'] . "?id=$id", 3, "成功修改活動！");
+        redirect_header($_SERVER['PHP_SELF'] . "?id=$id", 3, _MD_TAD_SIGNUP_UPDATE_SUCCESS);
         exit;
 
     //刪除資料
     case 'tad_signup_actions_destroy':
         Tad_signup_actions::destroy($id);
         // header("location: {$_SERVER['PHP_SELF']}");
-        redirect_header($_SERVER['PHP_SELF'], 3, "成功刪除活動！");
+        redirect_header($_SERVER['PHP_SELF'], 3, _MD_TAD_SIGNUP_DESTROY_SUCCESS);
         exit;
 
     //新增報名表單
@@ -66,7 +66,7 @@ switch ($op) {
     case 'tad_signup_data_store':
         $id = Tad_signup_data::store();
         Tad_signup_data::mail($id, 'store');
-        redirect_header("{$_SERVER['PHP_SELF']}?op=tad_signup_data_show&id=$id", 3, "成功報名活動！");
+        redirect_header("{$_SERVER['PHP_SELF']}?op=tad_signup_data_show&id=$id", 3, _MD_TAD_SIGNUP_APPLY_SUCCESS);
         break;
 
     //顯示報名表
@@ -84,7 +84,7 @@ switch ($op) {
     case 'tad_signup_data_update':
         Tad_signup_data::update($id);
         Tad_signup_data::mail($id, 'update');
-        redirect_header($_SERVER['PHP_SELF'] . "?op=tad_signup_data_show&id=$id", 3, "成功修改報名資料！");
+        redirect_header($_SERVER['PHP_SELF'] . "?op=tad_signup_data_show&id=$id", 3, _MD_TAD_SIGNUP_APPLY_UPDATE_SUCCESS);
         exit;
 
     //刪除報名資料
@@ -93,14 +93,14 @@ switch ($op) {
         $signup = Tad_signup_data::get($id, $uid);
         Tad_signup_data::destroy($id);
         Tad_signup_data::mail($id, 'destroy', $signup);
-        redirect_header($_SERVER['PHP_SELF'] . "?id=$action_id", 3, "成功刪除報名資料！");
+        redirect_header($_SERVER['PHP_SELF'] . "?id=$action_id", 3, _MD_TAD_SIGNUP_APPLY_DESTROY_SUCCESS);
         exit;
 
     //更改錄取狀態
     case 'tad_signup_data_accept':
         Tad_signup_data::accept($id, $accept);
         Tad_signup_data::mail($id, 'accept');
-        redirect_header($_SERVER['PHP_SELF'] . "?id=$action_id", 3, "成功設定錄取狀態！");
+        redirect_header($_SERVER['PHP_SELF'] . "?id=$action_id", 3, _MD_TAD_SIGNUP_ACCEPT_SUCCESS);
         exit;
 
     // 複製活動
@@ -117,7 +117,7 @@ switch ($op) {
     //批次匯入 CSV
     case 'tad_signup_data_import_csv':
         Tad_signup_data::import_csv($id);
-        redirect_header("{$_SERVER['PHP_SELF']}?id=$id", 3, "成功匯入報名資料！");
+        redirect_header("{$_SERVER['PHP_SELF']}?id=$id", 3, _MD_TAD_SIGNUP_IMPORT_SUCCESS);
         break;
 
     //修改報名表單(Excel)
@@ -128,7 +128,7 @@ switch ($op) {
     //批次匯入 Excel
     case 'tad_signup_data_import_excel':
         Tad_signup_data::import_excel($id);
-        redirect_header("{$_SERVER['PHP_SELF']}?id=$id", 3, "成功匯入報名資料！");
+        redirect_header("{$_SERVER['PHP_SELF']}?id=$id", 3, _MD_TAD_SIGNUP_IMPORT_SUCCESS);
         break;
 
     // 進行pdf的匯出設定
