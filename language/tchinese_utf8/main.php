@@ -22,6 +22,7 @@ define('_MD_TAD_SIGNUP_APPLY_UPDATE_SUCCESS', '成功修改報名資料！');
 define('_MD_TAD_SIGNUP_APPLY_DESTROY_SUCCESS', '成功刪除報名資料！');
 define('_MD_TAD_SIGNUP_ACCEPT_SUCCESS', '成功設定錄取狀態！');
 define('_MD_TAD_SIGNUP_IMPORT_SUCCESS', '成功匯入報名資料！');
+define('_MD_TAD_SIGNUP_MY_RECORD', '我的報名紀錄');
 
 // class\Tad_signup_data.php
 define('_MD_TAD_SIGNUP_CANNOT_BE_MODIFIED', '查無報名無資料，無法修改');
