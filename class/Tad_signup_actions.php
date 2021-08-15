@@ -29,7 +29,7 @@ class Tad_signup_actions
     {
         global $xoopsTpl, $xoopsUser;
         if (!$_SESSION['can_add']) {
-            redirect_header($_SERVER['PHP_SELF'], 3, "您沒有權限使用此功能");
+            redirect_header($_SERVER['PHP_SELF'], 3, _TAD_PERMISSION_DENIED);
         }
 
         $uid = $xoopsUser ? $xoopsUser->uid() : 0;
@@ -38,7 +38,7 @@ class Tad_signup_actions
             $db_values = empty($id) ? [] : self::get($id);
 
             if ($uid != $db_values['uid'] && !$_SESSION['tad_signup_adm']) {
-                redirect_header($_SERVER['PHP_SELF'], 3, "您沒有權限使用此功能");
+                redirect_header($_SERVER['PHP_SELF'], 3, _TAD_PERMISSION_DENIED);
             }
 
             $db_values['number'] = empty($id) ? 50 : $db_values['number'];
@@ -82,7 +82,7 @@ class Tad_signup_actions
     {
         global $xoopsDB;
         if (!$_SESSION['can_add']) {
-            redirect_header($_SERVER['PHP_SELF'], 3, "您沒有權限使用此功能");
+            redirect_header($_SERVER['PHP_SELF'], 3, _TAD_PERMISSION_DENIED);
         }
 
         //XOOPS表單安全檢查
@@ -164,7 +164,7 @@ class Tad_signup_actions
     {
         global $xoopsDB, $xoopsUser;
         if (!$_SESSION['can_add']) {
-            redirect_header($_SERVER['PHP_SELF'], 3, "您沒有權限使用此功能");
+            redirect_header($_SERVER['PHP_SELF'], 3, _TAD_PERMISSION_DENIED);
         }
 
         //XOOPS表單安全檢查
@@ -182,7 +182,7 @@ class Tad_signup_actions
 
         $now_uid = $xoopsUser ? $xoopsUser->uid() : 0;
         if ($uid != $now_uid && !$_SESSION['tad_signup_adm']) {
-            redirect_header($_SERVER['PHP_SELF'], 3, "您沒有權限使用此功能");
+            redirect_header($_SERVER['PHP_SELF'], 3, _TAD_PERMISSION_DENIED);
         }
 
         $sql = "update `" . $xoopsDB->prefix("tad_signup_actions") . "` set
@@ -209,7 +209,7 @@ class Tad_signup_actions
     {
         global $xoopsDB, $xoopsUser;
         if (!$_SESSION['can_add']) {
-            redirect_header($_SERVER['PHP_SELF'], 3, "您沒有權限使用此功能");
+            redirect_header($_SERVER['PHP_SELF'], 3, _TAD_PERMISSION_DENIED);
         }
 
         if (empty($id)) {
@@ -219,7 +219,7 @@ class Tad_signup_actions
         $action = self::get($id);
         $now_uid = $xoopsUser ? $xoopsUser->uid() : 0;
         if ($action['uid'] != $now_uid && !$_SESSION['tad_signup_adm']) {
-            redirect_header($_SERVER['PHP_SELF'], 3, "您沒有權限使用此功能");
+            redirect_header($_SERVER['PHP_SELF'], 3, _TAD_PERMISSION_DENIED);
         }
 
         $sql = "delete from `" . $xoopsDB->prefix("tad_signup_actions") . "`
@@ -299,7 +299,7 @@ class Tad_signup_actions
     {
         global $xoopsDB, $xoopsUser;
         if (!$_SESSION['can_add']) {
-            redirect_header($_SERVER['PHP_SELF'], 3, "您沒有權限使用此功能");
+            redirect_header($_SERVER['PHP_SELF'], 3, _TAD_PERMISSION_DENIED);
         }
 
         $action = self::get($id);
