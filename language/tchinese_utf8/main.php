@@ -23,7 +23,6 @@ define('_MD_TAD_SIGNUP_ANNOUNCEMENT_NOT_YET', '尚未公佈');
 define('_MD_TAD_SIGNUP_APPLY_LIST', '報名名單');
 define('_MD_TAD_SIGNUP_APPLY_DATE', '報名日期');
 define('_MD_TAD_SIGNUP_IDENTITY', '身份');
-define('_MD_TAD_SIGNUP_ADMIN', '活動報名管理');
 define('_MD_TAD_SIGNUP_CREATE_SUCCESS', '成功建立活動！');
 define('_MD_TAD_SIGNUP_UPDATE_SUCCESS', '成功修改活動！');
 define('_MD_TAD_SIGNUP_DESTROY_SUCCESS', '成功刪除活動！');

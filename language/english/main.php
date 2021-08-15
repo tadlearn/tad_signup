@@ -23,7 +23,6 @@ define('_MD_TAD_SIGNUP_ANNOUNCEMENT_NOT_YET', 'Not yet published');
 define('_MD_TAD_SIGNUP_APPLY_LIST', 'Application List');
 define('_MD_TAD_SIGNUP_APPLY_DATE', 'Enrollment Date');
 define('_MD_TAD_SIGNUP_IDENTITY', 'Identity');
-define('_MD_TAD_SIGNUP_ADMIN', 'Activity Enrollment Management');
 define('_MD_TAD_SIGNUP_CREATE_SUCCESS', 'Successful event creation!');
 define('_MD_TAD_SIGNUP_UPDATE_SUCCESS', 'Successful event modification!');
 define('_MD_TAD_SIGNUP_DESTROY_SUCCESS', 'Successfully deleted the activity!');

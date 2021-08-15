@@ -19,3 +19,4 @@ define('_MI_TAD_SIGNUP_ONLY_ENABLE_DESC', 'If only enrolable events will be show
 // admin\menu.php
 define('_MI_TAD_SIGNUP_ACTIONS_MANAGER', 'Event Management');
 define('_MI_TAD_SIGNUP_PERMISSION_SETTING', 'Permission Setting');
+define('_MI_TAD_SIGNUP_ADMIN', 'Event Registration Management');

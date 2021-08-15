@@ -58,7 +58,8 @@
 
     <div class="form-group row">
         <label class="col-sm-2 control-label col-form-label text-md-right">
-            <{$smarty.const._MD_TAD_SIGNUP_SETUP}>
+            <{$smarty.const._MD_TAD_SIGNUP_SETUP}><br>
+            <a href="https://www.tad0616.net/modules/tad_book3/page.php?tbsn=48&tbdsn=1605" target="_blank">example</a>
         </label>
         <div class="col-sm-10">
             <textarea name="setup" id="setup" class="form-control validate[required]" placeholder="<{$smarty.const._MD_TAD_SIGNUP_KEYIN}><{$smarty.const._MD_TAD_SIGNUP_SETUP}>"><{$setup}></textarea>
@@ -87,7 +88,7 @@
 
     <div class="form-group row">
         <label class="col-sm-2 control-label col-form-label text-md-right">
-            <{$smarty.const.上傳附件}>
+            <{$smarty.const._MD_TAD_SIGNUP_UPLOADS}>
         </label>
         <div class="col-sm-10">
             <{$upform}>
