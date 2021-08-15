@@ -53,6 +53,7 @@ define('_MD_TAD_SIGNUP_IMPORT_APPLY_LIST', '匯入報名名單');
 define('_MD_TAD_SIGNUP_IMPORT', '匯入');
 define('_MD_TAD_SIGNUP_DOWNLOAD', '下載');
 define('_MD_TAD_SIGNUP_IMPORT_FILE', '匯入格式檔');
+define('_MD_TAD_SIGNUP_APPLY_FORM', '報名表');
 
 // class\Tad_signup_data.php
 define('_MD_TAD_SIGNUP_CANNOT_BE_MODIFIED', '查無報名無資料，無法修改');
