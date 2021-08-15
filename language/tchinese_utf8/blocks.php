@@ -9,3 +9,11 @@ define('_MB_TAD_SIGNUP_ORDER_BY_END_DATE_DESC', '報名截止日期從近到遠'
 
 // blocks\action_signup.php
 define('_MB_TAD_SIGNUP_SELECT_ACTION', '請選擇一個活動');
+
+// templates\blocks\action_list.tpl
+define('_MB_TAD_SIGNUP_QUOTA', '名額');
+define('_MB_TAD_SIGNUP_CANDIDATES_QUOTA', '可候補人數');
+define('_MB_TAD_SIGNUP_PEOPLE', '人');
+define('_MB_TAD_SIGNUP_APPLIED', '，已報名');
+define('_MB_TAD_SIGNUP_IN_PROGRESS', '報名中');
+define('_MB_TAD_SIGNUP_CANT_APPLY', '無法報名');
