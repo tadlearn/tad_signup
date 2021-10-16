@@ -612,4 +612,24 @@ class Tad_signup_data
         $TadDataCenter->set_col('pdf_setup_id', $action_id);
         $TadDataCenter->saveCustomData(['pdf_setup_col' => [$pdf_setup_col]]);
     }
+
+    // 統計 radio、checkbox、select
+    public static function statistics($setup, $signup = [])
+    {
+        $result = [];
+        $setup_items = explode("\n", $setup);
+        foreach ($setup_items as $setup_item) {
+            if (preg_match("/radio|checkbox|select/", $setup_item)) {
+                $items = explode(",", $setup_item);
+                $title = str_replace('*', '', $items[0]);
+                foreach ($signup as $data) {
+                    foreach ($data['tdc'][$title] as $option) {
+                        $result[$title][$option]++;
+                    }
+                }
+            }
+        }
+        return $result;
+    }
+
 }

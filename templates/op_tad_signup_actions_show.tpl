@@ -47,17 +47,25 @@
             <tr>
                 <{foreach from=$signup_data.tdc key=col_name item=user_data}>
                     <td>
-                        <{foreach from=$user_data item=data}>
-                            <{if ($smarty.session.can_add && $uid == $now_uid) || $signup_data.uid == $now_uid}>
-                                <div><a href="<{$xoops_url}>/modules/tad_signup/index.php?op=tad_signup_data_show&id=<{$signup_data.id}>"><{$data}></a></div>
-                            <{else}>
+                        <{if ($smarty.session.can_add && $uid == $now_uid) || $signup_data.uid == $now_uid}>
+                            <{foreach from=$user_data item=data}>
+                                <div>
+                                    <a href="<{$xoops_url}>/modules/tad_signup/index.php?op=tad_signup_data_show&id=<{$signup_data.id}>"><{$data}></a>
+                                </div>
+                            <{/foreach}>
+                        <{else}>
+                            <div>
                                 <{if strpos($col_name, $smarty.const._MD_TAD_SIGNUP_NAME)!==false}>
-                                    <div><{$data|substr_replace:'O':3:3}></div>
+                                    <{if preg_match("/[a-z]/i", $user_data.0)}>
+                                        <{$user_data.0|regex_replace:"/[a-z]/":"*"}>
+                                    <{else}>
+                                        <{$user_data.0|substr_replace:'O':3:3}>
+                                    <{/if}>
                                 <{else}>
-                                    <div>****</div>
+                                    ****
                                 <{/if}>
-                            <{/if}>
-                        <{/foreach}>
+                            </div>
+                        <{/if}>
                     </td>
                 <{/foreach}>
                 <td>
@@ -88,6 +96,22 @@
             </tr>
         <{/foreach}>
     </tbody>
+</table>
+
+<table class="table table-sm">
+    <tr>
+        <{foreach from=$statistics key=title item=options}>
+            <td>
+                <b><{$title}></b>
+                <hr class="my-1">
+                <ul>
+                    <{foreach from=$options key=option item=count}>
+                        <li><{$option}> : <{$count}></li>
+                    <{/foreach}>
+                </ul>
+            </td>
+        <{/foreach}>
+    </tr>
 </table>
 
 <{if $smarty.session.can_add && $uid == $now_uid}>
