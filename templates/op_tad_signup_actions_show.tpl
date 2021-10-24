@@ -35,8 +35,8 @@
 <table class="table" data-toggle="table" data-pagination="true" data-search="true" data-mobile-responsive="true">
     <thead>
         <tr>
-            <{foreach from=$signup.0.tdc key=col_name item=user name=tdc}>
-                <th data-sortable="true" nowrap class="c"><{$col_name}></th>
+            <{foreach from=$titles item=title}>
+                <th data-sortable="true" nowrap class="c"><{$title}></th>
             <{/foreach}>
             <th data-sortable="true" nowrap class="c"><{$smarty.const._MD_TAD_SIGNUP_ACCEPT}></th>
             <th data-sortable="true" nowrap class="c"><{$smarty.const._MD_TAD_SIGNUP_APPLY_DATE}></th>
@@ -45,7 +45,8 @@
     <tbody>
         <{foreach from=$signup item=signup_data}>
             <tr>
-                <{foreach from=$signup_data.tdc key=col_name item=user_data}>
+                <{foreach from=$titles item=title}>
+                    <{assign var=user_data value=$signup_data.tdc.$title}>
                     <td>
                         <{if ($smarty.session.can_add && $uid == $now_uid) || $signup_data.uid == $now_uid}>
                             <{foreach from=$user_data item=data}>
@@ -55,7 +56,7 @@
                             <{/foreach}>
                         <{else}>
                             <div>
-                                <{if strpos($col_name, $smarty.const._MD_TAD_SIGNUP_NAME)!==false}>
+                                <{if strpos($title, '姓名')!==false}>
                                     <{if preg_match("/[a-z]/i", $user_data.0)}>
                                         <{$user_data.0|regex_replace:"/[a-z]/":"*"}>
                                     <{else}>

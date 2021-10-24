@@ -59,7 +59,8 @@
     <div class="form-group row">
         <label class="col-sm-2 control-label col-form-label text-md-right">
             <{$smarty.const._MD_TAD_SIGNUP_SETUP}><br>
-            <a href="https://www.tad0616.net/modules/tad_book3/page.php?tbsn=48&tbdsn=1605" target="_blank">example</a>
+            <div onClick="popupwindow('eguide_code.php', 'eguide code', 1024, 600)" style="cursor: pointer; color: rgb(45, 167, 110);">example</div>
+            <div onClick="popupwindow('eguide_editor.php', 'eguide editor', 1024, 600)" style="cursor: pointer; color: rgb(102, 19, 128);"><i class="fa fa-pencil" aria-hidden="true"></i> 編輯器</div>
         </label>
         <div class="col-sm-10">
             <textarea name="setup" id="setup" class="form-control validate[required]" placeholder="<{$smarty.const._MD_TAD_SIGNUP_KEYIN}><{$smarty.const._MD_TAD_SIGNUP_SETUP}>"><{$setup}></textarea>
@@ -105,3 +106,17 @@
         </button>
     </div>
 </form>
+
+<script language="javascript">
+
+    function popupwindow(url, title, w, h) {
+        const left = (screen.width/2)-(w/2);
+        const top = (screen.height/2)-(h/2);
+        var setupText = $('#setup').val();
+        setupText = setupText.replace('+', '%2B');
+        // setupText = setupText.replace('*', '%2A');
+        const toUrl = url+'?setup='+encodeURIComponent(setupText);
+        console.log(toUrl);
+        return window.open(toUrl, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+    }
+</script>
