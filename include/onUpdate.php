@@ -22,13 +22,12 @@ function xoops_module_pre_update_tad_signup(XoopsModule $module, $old_version)
     $gperm_handler = xoops_getHandler('groupperm');
     $groupid = Update::mk_group(_MI_TAD_SIGNUP_ADMIN);
     if (!$gperm_handler->checkRight($module->dirname(), 1, $groupid, $module->mid())) {
-        $perm_handler = xoops_getHandler('groupperm');
-        $perm = $perm_handler->create();
+        $perm = $gperm_handler->create();
         $perm->setVar('gperm_groupid', $groupid);
         $perm->setVar('gperm_itemid', 1);
         $perm->setVar('gperm_name', $module->dirname()); //一般為模組目錄名稱
         $perm->setVar('gperm_modid', $module->mid());
-        $perm_handler->insert($perm);
+        $gperm_handler->insert($perm);
     }
     return true;
 }
