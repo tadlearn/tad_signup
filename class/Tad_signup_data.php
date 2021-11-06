@@ -429,6 +429,8 @@ class Tad_signup_data
         }
 
         $action = Tad_signup_actions::get($action_id);
+        // 目前已報名人數
+        $action['signup_count'] = count(Tad_signup_data::get_all($action_id));
         $xoopsTpl->assign('action', $action);
 
         // 製作標題
@@ -452,6 +454,7 @@ class Tad_signup_data
         $token = new \XoopsFormHiddenToken();
         $token_form = $token->render();
         $xoopsTpl->assign("token_form", $token_form);
+
     }
 
     //批次匯入 CSV
@@ -508,6 +511,8 @@ class Tad_signup_data
         }
 
         $action = Tad_signup_actions::get($action_id);
+        // 目前已報名人數
+        $action['signup_count'] = count(Tad_signup_data::get_all($action_id));
         $xoopsTpl->assign('action', $action);
 
         // 製作標題
